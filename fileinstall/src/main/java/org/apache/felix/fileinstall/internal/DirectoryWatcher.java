@@ -846,8 +846,8 @@ public class DirectoryWatcher extends Thread implements BundleListener
                 final String fileName = path.substring(index+1);
                 if (filePattern == null || filePattern.matcher(fileName).matches()) {
                     Artifact artifact = new Artifact();
-                    artifact.setBundleId(bundles[i].getBundleId());
-                    artifact.setChecksum(Util.loadChecksum(bundles[i], context));
+                    artifact.setBundleId(bundles.getBundleId());
+                    artifact.setChecksum(Util.loadChecksum(bundles, context));
                     artifact.setListener(null);
                     artifact.setPath(new File(path));
                     setArtifact(new File(path), artifact);
